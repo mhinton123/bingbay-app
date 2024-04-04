@@ -139,10 +139,6 @@ img {
   gap: 1em;
 }
 
-.trending-list-wr::-webkit-scrollbar {
-  display: none; /* Hide the scrollbar in WebKit browsers */
-}
-
 .trending-wr h2 {
   margin-bottom: 0.7em;
 }
@@ -234,7 +230,7 @@ img {
 }
 
 .recommended-wr h2 {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 /* Recommended Title */
@@ -276,6 +272,7 @@ img {
 
 .recommended-details-wr {
   flex-grow: 1;
+  margin-bottom: 0.5em;
 }
 
 
@@ -284,6 +281,8 @@ img {
   align-items: center;
   gap: 0.3em;
 }
+
+/* Tablet Mode */
 
 @media (min-width: 650px) {
   
@@ -303,6 +302,7 @@ img {
    
   .heading-xs {
     font-size: 18px;
+    font-weight: 400;
   }
   
   .body-m {
@@ -317,13 +317,13 @@ img {
 
   .navbar-wr {
     margin: 0 1.5em 0 1.5em;
+    border-radius: 10px;
   }
 
   /* Searchbar */
 
   .searchbar-wr {
     margin: 1.8em 1.5em 0 1.5em;
-
   }
 
   .search-icon {
@@ -377,4 +377,92 @@ img {
     margin-bottom: 3em;
   }
   
+}
+
+/* Desktop Mode */
+@media (min-width: 1024px) {
+  
+  #root {
+    padding: 0.4em 0 0 0;
+  }
+  
+  .app {
+    display: relative;
+  }
+  
+  main {
+    margin-left: 7em;
+  }
+  /* Navbar */ 
+  
+  .navbar-wr {
+    position: fixed;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    justify-content: flex-start;
+    top: 1.5em;
+  }
+
+  .logo {
+    margin-bottom: 3em;
+  }
+
+  .nav-icons-wr {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .avatar-icon {
+    margin-top: auto;
+  }
+
+  /* Searchbar */
+  .searchbar-wr {
+    margin-left: 8em;
+    margin-top: 2em;
+  }
+
+  /* Trending */ 
+  .trending-list-wr {
+    box-sizing: border-box;
+    height: 250px;
+  }
+
+  /* Hide the scrollbar track */
+  .trending-list-wr::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  /* Define the scrollbar thumb */
+  .trending-list-wr::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3); /* Adjust the color as needed */
+    border-radius: 8px; /* Adjust the radius as needed */
+  }
+
+  /* Define the scrollbar thumb on hover */
+  .trending-list-wr::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the hover color as needed */
+  }
+  .trending-list-wr {
+    scrollbar-width: thin;
+  }
+
+  /* Recommended */
+  .recommended-list-wr {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* Two columns of equal width */
+  }
+
+
+}
+
+/* Ultra wide Desktop */
+
+@media (min-width: 1440px) {
+
+  .recommended-list-wr {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Two columns of equal width */
+
+  }
 }
