@@ -64,6 +64,10 @@ img {
   background-color: var(--800-blue);
 }
 
+main {
+  padding-bottom: 1em;
+}
+
 /* Navbar */ 
 
 .navbar-wr {
@@ -239,7 +243,7 @@ img {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-  margin-bottom: 2.5em;
+  margin-bottom: 2.8em;
   margin-top: 0.5em;
 }
 
@@ -268,11 +272,11 @@ img {
   display: flex;
   align-items: center;
   gap: 2px;
+  margin-bottom: 0.1em;
 }
 
 .recommended-details-wr {
   flex-grow: 1;
-  margin-bottom: 0.5em;
 }
 
 
@@ -288,6 +292,10 @@ img {
   
   #root {
     padding-top: 1.5em;
+  }
+
+  main {
+    padding-bottom: 2em;
   }
   
   /* Typography */

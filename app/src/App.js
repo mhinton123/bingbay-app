@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import './App.css';
 import Searchbar from "./components/Searchbar"
 import Navbar from "./components/Navbar"
@@ -17,8 +17,11 @@ function App() {
       <Searchbar />
 
       <main>
-        {/* Main Content goes here */}
-        <HomePage />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </BrowserRouter>
       </main>
     </div>
   );
