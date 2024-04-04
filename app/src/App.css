@@ -288,15 +288,9 @@ img {
 @media (min-width: 650px) {
   
   #root {
-    padding-top: 1em;
+    padding-top: 1.5em;
   }
   
-  /* Navbar */ 
-
-  .navbar-wr {
-    margin: 0 1em 0 1em;
-  }
-
   /* Typography */
 
   .heading-l {
@@ -319,10 +313,17 @@ img {
     font-size: 24px;
   }
 
+  /* Navbar */ 
+
+  .navbar-wr {
+    margin: 0 1.5em 0 1.5em;
+  }
+
   /* Searchbar */
 
   .searchbar-wr {
-    margin-top: 1.4em;
+    margin: 1.8em 1.5em 0 1.5em;
+
   }
 
   .search-icon {
@@ -337,32 +338,39 @@ img {
 
   /* Trending */ 
 
-  .bookmark-icon-wr {
-    top: 0.6em;
-    right: 0.8em;
+  .trending-wr {
+    margin: 1.5em 0 1.5em 1.5em;
   }
-
+  
+  .trending-list-wr {
+    height: 240px;
+  }
+  
   .trending-details-wr {
     bottom: 0.7em;
     left: 0.7em;
   }
-
+  
   .trending-title-wr {
     height: 230px; 
     width: 470px;
   }
 
-  .trending-list-wr {
-    height: 240px;
+  .bookmark-icon-wr {
+    top: 0.6em;
+    right: 0.8em;
   }
-
   /* Recommended */
+
+  .recommended-wr {
+    margin: 0 1.5em;
+  }
 
   .recommended-list-wr {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* Two columns of equal width */
     grid-auto-rows: 200px; /* Set the height of each row to 170px */
-    grid-gap: 1em;
+    grid-gap: 1.5em;
   }
   
   .recommended-title-wr {
