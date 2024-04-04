@@ -9,7 +9,7 @@ import AvatarIcon from "../assets/icon-avatar.svg"
 export default function Navbar() {
     return (
             <div className="navbar-wr">
-                <img src={Logo} alt="logo" />
+                <img className="logo" src={Logo} alt="logo" />
                 <div className="nav-icons-wr">
                     <img className="nav-icon" src={NavHomeIcon} alt="Home Icon" />
                     <img className="nav-icon" src={NavMoviesIcon} alt="Movies Icon" />

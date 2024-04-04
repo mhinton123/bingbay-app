@@ -9,16 +9,16 @@ export default function RecommendedTitle() {
             <img src={BGImage} alt="recommended title image" className="recommended-bg-img" />
             <div className="recommended-details-wr">
                 <div className="recommended-details">
-                    <p className="recommended-detail">2019</p>
+                    <p className="recommended-detail body-m">2019</p>
                     <span className="middle-dot">&#183;</span>
-                    <p className="recommended-detail">Movie</p>
+                    <p className="recommended-detail body-m">Movie</p>
                     <span className="middle-dot">&#183;</span>
-                    <p className="recommended-detail">PG</p>
+                    <p className="recommended-detail body-m">PG</p>
                 </div>
-                <h3 className="recommended-name">Beyond Earth</h3>
-                <div className="bookmark-icon-wr">
-                    <img src={BookmarkIcon} alt="" className="recommended-bookmark-icon" />
-                </div>
+                <h3 className="recommended-name heading-xs"> sdf dssadf  sadf Beyond Earth</h3>
+            </div>
+            <div className="bookmark-icon-wr">
+                <img src={BookmarkIcon} alt="" className="recommended-bookmark-icon" />
             </div>
         </div>
     )

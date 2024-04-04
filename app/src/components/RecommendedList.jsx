@@ -5,10 +5,9 @@ export default function RecommendedList() {
     return (
         <>
             <div className="recommended-wr">
-                <h2>Recommended for you</h2>
+                <h2 className="heading-l">Recommended for you</h2>
                 <div className="recommended-list-wr">
 
-                    <div className='recommended-title-wr'>
 
                         {/* Arr of Recommended Titles rendered here */}
                         <RecommendedTitle />
@@ -19,8 +18,11 @@ export default function RecommendedList() {
                         <RecommendedTitle />
                         <RecommendedTitle />
                         <RecommendedTitle />
+                        <RecommendedTitle />
+                        <RecommendedTitle />
+                        <RecommendedTitle />
+                        <RecommendedTitle />
 
-                    </div>
 
                 </div>
             </div>

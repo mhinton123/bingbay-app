@@ -5,18 +5,17 @@ export default function TrendingList() {
     return (
         <>
             <div className="trending-wr">
-                <h2>Trending</h2>
+                <h2 className="heading-l">Trending</h2>
                 <div className="trending-list-wr">
 
-                    <div className='trending-title-wr'>
 
                         {/* Arr of Trending Titles rendered here */}
                         <TrendingTitle />
                         <TrendingTitle />
                         <TrendingTitle />
                         <TrendingTitle />
-
-                    </div>
+                        <TrendingTitle />
+                        
 
                 </div>
             </div>
