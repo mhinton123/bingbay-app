@@ -1,0 +1,50 @@
+/* Typography */
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.heading-l {
+  font-size: 32px;
+  font-weight: 300;
+  color: white;
+}
+
+.heading-m {
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+}
+
+.heading-s {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+}
+
+.heading-xs {
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+}
+
+.body-m {
+  font-size: 15px;
+  font-weight: 300;
+  color: white;
+}
+
+.body-s {
+  font-size: 13px;
+  font-weight: 300;
+  color: white;
+}
+
+/* Colours */
+
+:root {
+  --main-red: #FC4747;
+  --800-blue: #10141E;
+  --500-blue: #161D2F;
+  --200-blue: #5A698F;
+}
+
