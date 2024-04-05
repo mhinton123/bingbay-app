@@ -10,7 +10,6 @@ export default function Title(props) {
         title, 
         category, 
         isBookmarked, 
-        isTrending, 
         rating, 
         thumbnail, 
         year} = props

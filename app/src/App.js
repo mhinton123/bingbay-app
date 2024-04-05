@@ -17,6 +17,18 @@ import AvatarIcon from "./assets/icon-avatar.svg";
 const DataContext = React.createContext()
 
 function App() {
+
+  // tracks whether the user is searching or not
+  const [searchValue, setSearchValue] = React.useState(false)
+  // tracks the current page the browser is on
+  const [page, setPage] = React.useState(null)
+
+  React.useEffect(()=> setPage("Home"), [])
+
+  // reset search value every time different page loads
+  React.useEffect(()=> setSearchValue(""), [page])
+
+
   return (
     <div className="App">
       <Router>
@@ -54,7 +66,13 @@ function App() {
         <Searchbar /> */}
 
         <main>
-        <DataContext.Provider value={data}>
+        <DataContext.Provider value={
+                  {data, 
+                  searchValue, 
+                  setSearchValue, 
+                  page, 
+                  setPage}
+        }>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/movies" element={<MoviesPage />} />

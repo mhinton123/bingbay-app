@@ -7,17 +7,17 @@ const { v4: uuidv4 } = require('uuid')
 export default function TitleList(props) {
 
     // Filter trending and convert to JSX
-    const titlesObjArr = React.useContext(DataContext)
+    const {data} = React.useContext(DataContext)
     let filteredArr = []
     
     if(props.header === "Recommended for you") {
-        filteredArr = titlesObjArr.filter(title => !title.isTrending)
+        filteredArr = data.filter(title => !title.isTrending)
     }
     else if (props.header === "Movies") {
-        filteredArr = titlesObjArr.filter(title => title.category === "Movie")
+        filteredArr = data.filter(title => title.category === "Movie")
     }
     else {
-        filteredArr = titlesObjArr.filter(title => title.category === "TV Series")
+        filteredArr = data.filter(title => title.category === "TV Series")
     }
     
     const filteredTitlesJSX = filteredArr.map(title => {

@@ -7,8 +7,8 @@ const { v4: uuidv4 } = require('uuid')
 export default function TrendingList() {
     
     // Filter trending and convert to JSX
-    const titlesObjArr = React.useContext(DataContext)
-    const filteredTrending = titlesObjArr.filter(title => title.isTrending)
+    const {data} = React.useContext(DataContext)
+    const filteredTrending = data.filter(title => title.isTrending)
     const titlesJSX = filteredTrending.map(title => {
         return (
             <TrendingTitle
