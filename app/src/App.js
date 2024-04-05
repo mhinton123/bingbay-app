@@ -50,8 +50,8 @@ function App() {
             </div>
           </nav>
         </header>
-        
-        <Searchbar />
+{/*         
+        <Searchbar /> */}
 
         <main>
         <DataContext.Provider value={data}>

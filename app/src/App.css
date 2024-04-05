@@ -342,7 +342,7 @@ main {
   /* Searchbar */
 
   .searchbar-wr {
-    margin: 1.8em 1.5em 0 1.5em;
+    margin: 1.8em 1.5em 1em 1.5em;
   }
 
   .search-icon {
@@ -439,7 +439,6 @@ main {
 
   /* Searchbar */
   .searchbar-wr {
-    margin-left: 8em;
     margin-top: 2em;
   }
 

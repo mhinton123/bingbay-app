@@ -1,6 +1,8 @@
 import React from "react";
 import TrendingTitle from "../components/TrendingTitle"
 import { DataContext } from "../App.js"
+const { v4: uuidv4 } = require('uuid')
+
 
 export default function TrendingList() {
     
@@ -9,7 +11,8 @@ export default function TrendingList() {
     const filteredTrending = titlesObjArr.filter(title => title.isTrending)
     const titlesJSX = filteredTrending.map(title => {
         return (
-            <TrendingTitle 
+            <TrendingTitle
+                key={uuidv4()}
                 title={title.title}
                 thumbnail={title.thumbnail.regular.large}
                 year={title.year}

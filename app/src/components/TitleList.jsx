@@ -1,6 +1,8 @@
 import React from "react";
 import Title from "./Title"
 import { DataContext } from "../App.js"
+const { v4: uuidv4 } = require('uuid')
+
 
 export default function TitleList(props) {
 
@@ -20,7 +22,8 @@ export default function TitleList(props) {
     
     const filteredTitlesJSX = filteredArr.map(title => {
         return (
-            <Title 
+            <Title
+                key={uuidv4()} 
                 title={title.title}
                 thumbnail={title.thumbnail.regular.large}
                 year={title.year}
