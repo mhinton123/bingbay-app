@@ -6,8 +6,19 @@ export default function TitleList(props) {
 
     // Filter trending and convert to JSX
     const titlesObjArr = React.useContext(DataContext)
-    const filteredNonTrending = titlesObjArr.filter(title => !title.isTrending)
-    const titlesJSX = filteredNonTrending.map(title => {
+    let filteredArr = []
+    
+    if(props.header === "Recommended for you") {
+        filteredArr = titlesObjArr.filter(title => !title.isTrending)
+    }
+    else if (props.header === "Movies") {
+        filteredArr = titlesObjArr.filter(title => title.category === "Movie")
+    }
+    else {
+        filteredArr = titlesObjArr.filter(title => title.category === "TV Series")
+    }
+    
+    const filteredTitlesJSX = filteredArr.map(title => {
         return (
             <Title 
                 title={title.title}
@@ -27,10 +38,8 @@ export default function TitleList(props) {
                 <h2 className="heading-l">{props.header}</h2>
                 <div className="title-list-wr">
 
-
-                        {/* Arr of Recommended Titles rendered here */}
-                        {titlesJSX}
-
+                        {/* Titles are rendered here */}
+                        {filteredTitlesJSX}
 
                 </div>
             </div>

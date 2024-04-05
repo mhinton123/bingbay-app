@@ -6,7 +6,7 @@ export default function HomePage() {
     return (
         <>
             <TrendingList />
-            <TitleList header="Reccomended for you"/>
+            <TitleList header="Recommended for you"/>
         </>
     )
 }
