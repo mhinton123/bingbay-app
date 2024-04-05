@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink} from "react-router-dom";
 import './App.css';
 import Searchbar from "./components/Searchbar"
@@ -12,6 +13,8 @@ import NavMoviesIcon from "./assets/icon-nav-movies.svg";
 import NavSeriesIcon from "./assets/icon-nav-tv-series.svg";
 import NavBookmarkedIcon from "./assets/icon-nav-bookmark.svg";
 import AvatarIcon from "./assets/icon-avatar.svg";
+
+const DataContext = React.createContext()
 
 function App() {
   return (
@@ -51,11 +54,13 @@ function App() {
         <Searchbar />
 
         <main>
+        <DataContext.Provider value={data}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/movies" element={<MoviesPage />} />
             <Route path="/series" element={<SeriesPage />} />
           </Routes>
+        </DataContext.Provider>  
         </main>
       </Router>
     </div>
@@ -63,3 +68,4 @@ function App() {
 }
 
 export default App;
+export { DataContext }
