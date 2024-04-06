@@ -2,6 +2,7 @@ import React from "react";
 import MovieIcon from "../assets/icon-category-movie.svg"
 import BookmarkIconEmpty from "../assets/icon-bookmark-empty.svg"
 import BookmarkIconFull from "../assets/icon-bookmark-full.svg"
+import PlayIcon from "../assets/icon-play.svg"
 
 export default function TrendingTitle(props) {
     
@@ -33,6 +34,10 @@ export default function TrendingTitle(props) {
             <div className="bookmark-icon-wr">
                 <img src={isBookmarked ? BookmarkIconEmpty : BookmarkIconFull} alt="" className="trending-bookmark-icon" />
             </div>
+            <button className="title-play-btn trending">
+                <img src={PlayIcon} alt="play icon" className="play-icon trending"/>
+                <p className="play trending">Play</p>
+            </button>
         </div>
     )
 }

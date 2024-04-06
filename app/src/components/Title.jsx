@@ -2,6 +2,8 @@ import React from "react";
 import MovieIcon from "../assets/icon-category-movie.svg"
 import BookmarkIconEmpty from "../assets/icon-bookmark-empty.svg"
 import BookmarkIconFull from "../assets/icon-bookmark-full.svg"
+import PlayIcon from "../assets/icon-play.svg"
+
 
 export default function Title(props) {
     
@@ -13,8 +15,30 @@ export default function Title(props) {
         thumbnail, 
         year} = props
     
+    const handleMouseOver = (e) => {
+        const playButton = e.target.querySelector('.title-play-btn');
+        
+        if (playButton) {
+            // Toggle the display property
+            playButton.style.display = "flex"
+        }
+    }
+    
+    // const handleMouseLeave = (e) => {
+    //     const playButton = e.target.querySelector('.title-play-btn');
+        
+    //     if (e.target.className !== '.title-play-btn') {
+    //         // Toggle the display property
+    //         playButton.style.display = "none"
+    //     }
+    // }
+
     return (
-        <div className="title-wr">
+        <div 
+            className="title-wr" 
+            onMouseOver={(e) => handleMouseOver(e)}
+            // onMouseLeave={(e) => handleMouseLeave(e)}
+        >
             <img src={thumbnail} alt="title image" className="bg-img" />
             <div className="title-details-wr">
                 <div className="title-details">
@@ -32,6 +56,10 @@ export default function Title(props) {
             <div className="bookmark-icon-wr">
                 <img src={isBookmarked ? BookmarkIconEmpty : BookmarkIconFull} alt="" className="title-bookmark-icon" />
             </div>
+            <button className="title-play-btn">
+                <img src={PlayIcon} alt="play icon" className="play-icon"/>
+                <p className="play">Play</p>
+            </button>
         </div>
     )
 }
