@@ -5,11 +5,23 @@ const { v4: uuidv4 } = require('uuid')
 
 export default function SearchResults() {
     
-    const {data, searchValue} = React.useContext(DataContext)
+    const {data, searchValue, page} = React.useContext(DataContext)
 
     const searchResults = data.filter(title => title.title.toLowerCase().includes(searchValue))
-    console.log(searchResults)
-    const resultsJSX = searchResults.map(title => {
+    let pageFilter = []
+
+    // Filter search result based on what page user is on
+    if(page === "Movies") {
+        pageFilter = searchResults.filter(title => title.category === "Movie")
+    }
+    else if(page === "TV Series") {
+        pageFilter = searchResults.filter(title => title.category === "TV Series")
+    }
+    else {
+        pageFilter = searchResults
+    }
+
+    const resultsJSX = pageFilter.map(title => {
         return (
             <Title
                 key={uuidv4()} 
@@ -23,13 +35,15 @@ export default function SearchResults() {
             />
         )
     })
-
-    console.log(searchResults)
     
     return (
         <div className="title-list-wr">
 
-            {resultsJSX}
+            {/* Search Results go here */}
+            <>
+                {resultsJSX}
+            </>
+        
         </div>
     )
 }

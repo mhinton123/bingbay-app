@@ -1,18 +1,30 @@
 import React from "react";
 import TitleList from "../components/TitleList.jsx"
 import Searchbar from "../components/Searchbar.jsx"
+import SearchResults from "../components/SearchResults.jsx";
 import { DataContext } from "../App.js"
 
 export default function HomePage() {
     
-    const {page, setPage} = React.useContext(DataContext)
+    const {page, setPage, searchValue} = React.useContext(DataContext)
     setPage("TV Series")
-    console.log(page)
     
     return (
         <>
-            <Searchbar page={page}/>
-            <TitleList header={page}/>
+        {searchValue ?
+                (
+                    <>
+                        <Searchbar page={page}/>
+                        <SearchResults />
+                    </>
+                )
+            :
+                (
+            <>
+                <Searchbar page={page}/>
+                <TitleList header={page}/> 
+            </>
+                )}
         </>
     )
 }

@@ -8,7 +8,6 @@ export default function HomePage() {
     
     const {page, setPage, searchValue} = React.useContext(DataContext)
     setPage("Movies")
-    console.log(page)
     
     return (
         <>
