@@ -37,13 +37,27 @@ export default function SearchResults() {
     })
     
     return (
-        <div className="title-list-wr">
-
-            {/* Search Results go here */}
-            <>
-                {resultsJSX}
-            </>
         
-        </div>
+        resultsJSX.length === 0 ?
+        
+        (
+            <div className="search-wr">
+                <h2 className="heading-l">0 results found for '{searchValue}'</h2>
+            </div>
+        )
+        
+        :
+        
+        (
+            <div className="search-wr">
+                <h2 className="heading-l">Found {resultsJSX.length} results for '{searchValue}'</h2>
+                <div className="title-list-wr">
+
+                    {/* Search Results go here */}
+                            {resultsJSX}
+
+                </div>
+            </div>
+        )
     )
 }

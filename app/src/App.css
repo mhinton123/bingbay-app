@@ -297,6 +297,16 @@ main {
   gap: 0.3em;
 }
 
+/* Search Results */
+
+.search-wr {
+  padding: 1em;
+}
+
+.search-wr .heading-l {
+  margin-bottom: 0.5em;
+}
+
 /* Tablet Mode */
 
 @media (min-width: 650px) {
@@ -394,6 +404,12 @@ main {
   
   .title-wr {
     margin-bottom: 3em;
+  }
+
+  /* Search Results */
+
+  .search-wr {
+    padding: 0em 1.5em 1.5em 1.5em;
   }
   
 }
