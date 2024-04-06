@@ -1,16 +1,17 @@
 import React from "react";
-import { DataContext } from "../App.js"
 import Title from "./Title.jsx";
+import { DataContext } from "../App.js"
 const { v4: uuidv4 } = require('uuid')
 
 export default function SearchResults() {
     
     const {data, searchValue, page} = React.useContext(DataContext)
-
+    
+    // filter search results by searchbar input
     const searchResults = data.filter(title => title.title.toLowerCase().includes(searchValue))
+    
+    // filter search result based on what page user is on
     let pageFilter = []
-
-    // Filter search result based on what page user is on
     if(page === "Movies") {
         pageFilter = searchResults.filter(title => title.category === "Movie")
     }

@@ -3,24 +3,19 @@ import Title from "./Title"
 import { DataContext } from "../App.js"
 const { v4: uuidv4 } = require('uuid')
 
-
 export default function TitleList(props) {
 
-    // Filter trending and convert to JSX
     const {data} = React.useContext(DataContext)
-    let filteredArr = []
     
-    if(props.header === "Recommended for you") {
-        filteredArr = data.filter(title => !title.isTrending)
-    }
-    else if (props.header === "Movies") {
-        filteredArr = data.filter(title => title.category === "Movie")
-    }
-    else {
-        filteredArr = data.filter(title => title.category === "TV Series")
+    // filter all non-trending shows
+    let trendingArr = data;
+    if (props.header === "Recommended for you") {
+        trendingArr = trendingArr.filter(title => !title.isTrending)
+    } else {
+        trendingArr = trendingArr.filter(title => title.category === (props.header === "Movies" ? "Movie" : "TV Series"))
     }
     
-    const filteredTitlesJSX = filteredArr.map(title => {
+    const filteredTitlesJSX = trendingArr.map(title => {
         return (
             <Title
                 key={uuidv4()} 

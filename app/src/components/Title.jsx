@@ -1,5 +1,4 @@
 import React from "react";
-import BGImage from "../assets/thumbnails/112/regular/large.jpg"
 import MovieIcon from "../assets/icon-category-movie.svg"
 import BookmarkIconEmpty from "../assets/icon-bookmark-empty.svg"
 import BookmarkIconFull from "../assets/icon-bookmark-full.svg"

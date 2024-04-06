@@ -10,6 +10,7 @@ export default function Searchbar(props) {
         setSearchValue(e.target.value.toLowerCase())
     }
 
+    // updates placeholder text for input
     const placeholderTextMap = {
         Home: "movies or TV series",
         Movies: "movies",
@@ -18,7 +19,6 @@ export default function Searchbar(props) {
       
     let placeHolderText = "Search for " + (placeholderTextMap[props.page] || "TV series");
     
-
     return (
             <div className="searchbar-wr">
                 <img src={searchIcon} alt="search icon" className="search-icon"/>

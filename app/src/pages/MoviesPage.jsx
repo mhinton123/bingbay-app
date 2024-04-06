@@ -11,7 +11,7 @@ export default function HomePage() {
     
     return (
         <>
-        {searchValue ?
+            {searchValue ?
                 (
                     <>
                         <Searchbar page={page}/>
@@ -20,10 +20,10 @@ export default function HomePage() {
                 )
             :
                 (
-            <>
-                <Searchbar page={page}/>
-                <TitleList header={page}/> 
-            </>
+                    <>
+                        <Searchbar page={page}/>
+                        <TitleList header={page}/> 
+                    </>
                 )}
         </>
     )

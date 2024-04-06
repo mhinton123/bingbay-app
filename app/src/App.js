@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, NavLink} from "react-router-dom";
 import './App.css';
-import Searchbar from "./components/Searchbar"
+
 import HomePage from "./pages/HomePage"
 import MoviesPage from "./pages/MoviesPage"
 import SeriesPage from "./pages/SeriesPage"
-import data from "./data.json"
 
 import Logo from "./assets/logo.svg";
 import NavHomeIcon from "./assets/icon-nav-home.svg";
@@ -13,6 +12,8 @@ import NavMoviesIcon from "./assets/icon-nav-movies.svg";
 import NavSeriesIcon from "./assets/icon-nav-tv-series.svg";
 import NavBookmarkedIcon from "./assets/icon-nav-bookmark.svg";
 import AvatarIcon from "./assets/icon-avatar.svg";
+
+import data from "./data.json"
 
 const DataContext = React.createContext()
 
@@ -27,7 +28,6 @@ function App() {
 
   // reset search value every time different page loads
   React.useEffect(()=> setSearchValue(""), [page])
-
 
   return (
     <div className="App">
@@ -62,9 +62,6 @@ function App() {
             </div>
           </nav>
         </header>
-{/*         
-        <Searchbar /> */}
-
         <main>
         <DataContext.Provider value={
                   {data, 

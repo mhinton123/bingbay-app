@@ -62,6 +62,11 @@ img {
 
 #root {
   background-color: var(--800-blue);
+  height: 100vh;
+}
+
+.App {
+  background-color: var(--800-blue);
 }
 
 main {

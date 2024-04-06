@@ -3,10 +3,9 @@ import TrendingTitle from "../components/TrendingTitle"
 import { DataContext } from "../App.js"
 const { v4: uuidv4 } = require('uuid')
 
-
 export default function TrendingList() {
     
-    // Filter trending and convert to JSX
+    // filter trending shows
     const {data} = React.useContext(DataContext)
     const filteredTrending = data.filter(title => title.isTrending)
     const titlesJSX = filteredTrending.map(title => {
