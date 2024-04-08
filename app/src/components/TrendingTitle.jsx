@@ -14,9 +14,36 @@ export default function TrendingTitle(props) {
         thumbnail, 
         year} = props
     
+        const handleMouseOver = (e) => {
+        
+            // show play button
+            const playButton = e.target.querySelector('.title-play-btn');
+            
+            if (playButton) {
+                playButton.style.display = "flex"
+            }
+        }
+        
+        const handleMouseLeave = (e) => {
+            
+            // hide play button on all elements to avoid wierd behaviour
+            const playButton = e.target.querySelector('.title-play-btn');
+            
+            if (playButton) {
+                const btnsArr = document.getElementsByClassName('title-play-btn')
+                Array.from(btnsArr).forEach(btn => {
+                    btn.style.display = "none"
+                })
+            }
+        }
+
     return (
         
-        <div className="trending-title-wr">
+        <div 
+            className="trending-title-wr"
+            onMouseOver={(e) => handleMouseOver(e)}
+            onMouseLeave={(e) => handleMouseLeave(e)}
+        >
             <img src={thumbnail} alt="trending title image" className="trending-bg-img" />
             <div className="trending-details-wr">
                 <div className="trending-details">

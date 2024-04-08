@@ -5,12 +5,12 @@ import './App.css';
 import HomePage from "./pages/HomePage"
 import MoviesPage from "./pages/MoviesPage"
 import SeriesPage from "./pages/SeriesPage"
+import LoginPage from "./pages/LoginPage"
 
 import Logo from "./assets/logo.svg";
 import NavHomeIcon from "./assets/icon-nav-home.svg";
 import NavMoviesIcon from "./assets/icon-nav-movies.svg";
 import NavSeriesIcon from "./assets/icon-nav-tv-series.svg";
-import NavBookmarkedIcon from "./assets/icon-nav-bookmark.svg";
 import AvatarIcon from "./assets/icon-avatar.svg";
 
 import data from "./data.json"
@@ -51,11 +51,6 @@ function App() {
                   className={({isActive}) => isActive ? "active-link" : "" }
                   to="/series">
                   <img className="nav-icon" src={NavSeriesIcon} alt="Series Icon" />
-                </NavLink>
-                <NavLink 
-                  className={({isActive}) => isActive ? "active-link" : "" }
-                  to="/bookmarked">
-                  <img className="nav-icon" src={NavBookmarkedIcon} alt="Bookmarked Icon" />
                 </NavLink>
               </div>
               <img className="avatar-icon" src={AvatarIcon} alt="Avatar Icon" />

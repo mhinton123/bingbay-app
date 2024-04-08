@@ -16,28 +16,33 @@ export default function Title(props) {
         year} = props
     
     const handleMouseOver = (e) => {
+        
+        // show play button
         const playButton = e.target.querySelector('.title-play-btn');
         
         if (playButton) {
-            // Toggle the display property
             playButton.style.display = "flex"
         }
     }
     
-    // const handleMouseLeave = (e) => {
-    //     const playButton = e.target.querySelector('.title-play-btn');
+    const handleMouseLeave = (e) => {
         
-    //     if (e.target.className !== '.title-play-btn') {
-    //         // Toggle the display property
-    //         playButton.style.display = "none"
-    //     }
-    // }
+        // hide play button on all elements to avoid wierd behaviour
+        const playButton = e.target.querySelector('.title-play-btn');
+        
+        if (playButton) {
+            const btnsArr = document.getElementsByClassName('title-play-btn')
+            Array.from(btnsArr).forEach(btn => {
+                btn.style.display = "none"
+            })
+        }
+    }
 
     return (
         <div 
             className="title-wr" 
             onMouseOver={(e) => handleMouseOver(e)}
-            // onMouseLeave={(e) => handleMouseLeave(e)}
+            onMouseLeave={(e) => handleMouseLeave(e)}
         >
             <img src={thumbnail} alt="title image" className="bg-img" />
             <div className="title-details-wr">
